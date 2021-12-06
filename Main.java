@@ -16,15 +16,14 @@ import java.util.Scanner;
  *
  *	https://web.stanford.edu/class/cs106j/handouts/36-TheEnigmaMachine.pdf
  *	https://www.youtube.com/watch?v=QwQVMqfoB2E
- */			 		 	
- 
+ */
+
 public class Main {
 
 	private static Rotor[] rotors;
 	private static Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
-	
 
 		rotors = new Rotor[3];
 
@@ -32,21 +31,33 @@ public class Main {
 
 		System.out.println("Enter the starting position of Rotor 1? [a-z]");
 		char letter = sc.next().charAt(0);
+		sc.nextLine();
 
 		char position = Character.toLowerCase(letter);
 
 		int starting_position = rotors[0].findIndex(position);
-		
+
 		rotors[0].shiftRotor(starting_position);
-		
+
 		// TESTING
-		char message = 'b';
-
-		char encrypted_char = rotors[0].encrypt_message(message);
-
-		System.out.print(encrypted_char);
+		System.out.println("What is the message to be encrypted: ");
+		String input = sc.nextLine();
+		
+		String message = input.toLowerCase();
+		
+		String encrypted_message = "";
+		
+		for (int i = 0; i < message.length(); i++) {
+			char temp = message.charAt(i);
+			char encoded_char = rotors[0].encrypt_message(temp);
+			
+			encrypted_message += encoded_char;
+			rotors[0].rotateRotor();
+		}
+		
+		System.out.println("The Encrypted Message is : " + encrypted_message.toUpperCase());
 	}
-	
+
 	// This is where the rotor objects are added
 	private static void addRotors() {
 
