@@ -1,22 +1,9 @@
 import java.util.Scanner;
+
 /* 
  * This Program attempts to recreate the enigma machine used in Germany before and during the war. The enigma machine
  * encrypted messages used by the German Wehrmacht as well as by industry.
- * 
- * Milestones hit: 	First rotor completed 
- * 					Send a custom message and recieve encoded output.
- * 
- * Goals: 	Add a further two rotors to the machine.
- * 			Be able to change the position of the rotors.
- *			Add a further 2 rotors that can be swapped in for others.
- *			Add a reflector at the end of the rotors.
- *			Add a plug board to the enigma machine
- *
- *Some resources that are helpful to understanding enigma -
- *
- *	https://web.stanford.edu/class/cs106j/handouts/36-TheEnigmaMachine.pdf
- *	https://www.youtube.com/watch?v=QwQVMqfoB2E
- */
+*/
 
 public class Main {
 
@@ -35,7 +22,8 @@ public class Main {
 			System.out.println("     ***** ENIGMA *****     ");
 			System.out.println("A. Set Rotor Positions");
 			System.out.println("B. Encrypt A Message");
-			System.out.println("C. Decrypt A Message (Ensure Correct Rotor Settings First)");
+			System.out.println(
+					"C. Decrypt A Message (Ensure Correct Rotor Settings First)");
 			System.out.println("X. Exit the Program");
 			System.out.println();
 
