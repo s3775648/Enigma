@@ -9,6 +9,7 @@ public class Main {
 
 	private static Rotor[] rotors;
 	private static Scanner sc = new Scanner(System.in);
+	private static boolean direction = true;
 
 	public static void main(String[] args) {
 
@@ -46,7 +47,7 @@ public class Main {
 					break;
 
 				case "C":
-					// decryptMessage();
+					decryptMessage();
 					break;
 
 				case "X":
@@ -84,10 +85,36 @@ public class Main {
 				.println("The Encrypted Message is : " + encrypted_message.toUpperCase());
 	}
 
+	
+	// User is asked to input a message and then encrypts the message and returns
+	// the encrypted message
+	private static void decryptMessage() {
+
+		System.out.println("What is the message to be decrypted: ");
+		String input = sc.nextLine();
+
+		String message = input.toLowerCase();
+
+		String decrypted_message = "";
+
+		for (int i = 0; i < message.length(); i++) {
+			char temp = message.charAt(i);
+			char encoded_char = rotors[0].decrypt_message(temp);
+
+			decrypted_message += encoded_char;
+			rotors[0].rotateRotor();
+		}
+		System.out
+				.println("The Deacrypted Message is : " + decrypted_message.toUpperCase());
+	}
+
+	
 	// This function sets the starting rotor positions by asking for them from the
 	// user
 	private static void setRotorPosition() {
-
+		
+		direction = true;
+		
 		System.out.println("Enter the starting position of Rotor 1? [a-z]");
 		char letter = sc.next().charAt(0);
 		sc.nextLine();
@@ -96,7 +123,7 @@ public class Main {
 
 		int starting_position = rotors[0].findIndex(position);
 
-		rotors[0].shiftRotor(starting_position);
+		rotors[0].shiftRotor(starting_position, direction);
 	}
 
 	// This is where the rotor objects are added

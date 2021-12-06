@@ -30,10 +30,15 @@ public class Rotor {
 
 	// The integer in the FindIndex function bove is used to set the starting
 	// position of the rotor.
-	public void shiftRotor(int movement_amount) {
+	public void shiftRotor(int movement_amount, boolean direction) {
 
 		for (int i = 0; i < movement_amount; i++) {
-			rotateRotor();
+			if (direction) {
+				rotateRotor();
+			} else {
+				rotateRotorBackwards();
+			}
+
 		}
 	}
 
@@ -65,5 +70,30 @@ public class Rotor {
 		return encoded_letter;
 	}
 
-}
+	// This is where the rotation of the rotor backwards takes place. This is used for decryption purposes.
+	public void rotateRotorBackwards() {
 
+		char temp = this.alphabet[this.alphabet.length - 1];
+
+		for (int i = this.alphabet.length - 1; i > 0 - 1; i--) {
+			this.alphabet[i] = this.alphabet[i - 1];
+		}
+		this.alphabet[0] = temp;
+	}
+
+	// This method decrypts a message sent through early enigma versions.
+	public char decrypt_message(char letter) {
+
+		char encoded_letter = 0;
+
+		for (int i = 0; i < this.rotor_pins.length; i++) {
+			int compare_letters = Character.compare(letter, this.rotor_pins[i]);
+
+			if (compare_letters == 0) {
+				encoded_letter = this.alphabet[i];
+			}
+		}
+		return encoded_letter;
+	}
+	
+}
