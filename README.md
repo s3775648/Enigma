@@ -5,17 +5,17 @@
   
   Milestones hit: 	
 				
- * 					First rotor completed.
- *					Add a decryptor function until reflectors are added (reflectors ensure that when pressing the encrypted code the original message is returned)
- * 					Send a custom message and recieve encoded output. 
+ * 	First rotor completed.
+ *	Add a decryptor function until reflectors are added (reflectors ensure that when pressing the encrypted code the original message is returned)
+ * 	Send a custom message and recieve encoded output. 
  
  Goals:
- * 		 	Add a further two rotors to the machine.
- * 			Be able to change the position of the rotors.
- *			Add a further 2 rotors that can be swapped in for others.
- *			Add a reflector at the end of the rotors. 
- *			Add a plug board to the enigma machine
- *			Have the entire program run, look and feel like an authentic enigma machine (Only once all other aspects are complete)
+ * 	Add a further two rotors to the machine.
+ * 	Be able to change the position of the rotors.
+ *	Add a further 2 rotors that can be swapped in for others.
+ *	Add a reflector at the end of the rotors. 
+ *	Add a plug board to the enigma machine
+ *	Have the entire program run, look and feel like an authentic enigma machine (Only once all other aspects are complete)
  
  Some resources that are helpful to understanding enigma -
  
