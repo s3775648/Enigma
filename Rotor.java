@@ -12,8 +12,8 @@ public class Rotor {
 		this.alphabet = alphabet;
 	}
 
-
-	// As this enigma machine uses letters, this is where the starting letter position of the rotor is converted into an integer.
+	// As this enigma machine uses letters, this is where the starting letter
+	// position of the rotor is converted into an integer.
 	public int findIndex(char rotor_position) {
 
 		int index_no = 0;
@@ -28,8 +28,8 @@ public class Rotor {
 		return index_no;
 	}
 
-	
-	// The integer in the FindIndex function bove is used to set the starting position of the rotor.
+	// The integer in the FindIndex function bove is used to set the starting
+	// position of the rotor.
 	public void shiftRotor(int movement_amount) {
 
 		for (int i = 0; i < movement_amount; i++) {
@@ -37,7 +37,6 @@ public class Rotor {
 		}
 	}
 
-	
 	// This is where the rotation of the rotor actually takes place.
 	public void rotateRotor() {
 
@@ -49,9 +48,9 @@ public class Rotor {
 
 		this.alphabet[this.alphabet.length - 1] = temp;
 	}
-	
-	
-	// This is called for each char in the message and returns an encoded letter each time.
+
+	// This is called for each char in the message and returns an encoded letter
+	// each time.
 	public char encrypt_message(char letter) {
 
 		char encoded_letter = 0;
@@ -65,4 +64,6 @@ public class Rotor {
 		}
 		return encoded_letter;
 	}
+
 }
+
