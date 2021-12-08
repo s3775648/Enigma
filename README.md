@@ -5,7 +5,7 @@
   
   Milestones hit: 	
 				
- * 	First rotor completed.
+ * 	First rotor nearly complete (problem found).
  *	Add a decryptor function until reflectors are added (reflectors ensure that when pressing the encrypted code the original message is returned)
  * 	Send a custom message and recieve encoded output. 
  
